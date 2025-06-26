@@ -1,2 +1,2 @@
 # LLM_impact
-This depository is for paper "Impact of Large Language Models on Peer Review: A Fine-Grained Analysis of Review Reports for Academic Articles"
+This depository is for paper "Impact of large language models on peer review opinions from a fine-grained perspective: Evidence from top conference proceedings in AI"
