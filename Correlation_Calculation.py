@@ -5,7 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import pearsonr, spearmanr
 with open('AI_ICLR_2024.json') as f:
-    ana_data = json.load(f)
+    a_data = json.load(f)
+f.close()
 
 score = []
 confidence_score = []
@@ -17,7 +18,7 @@ originality = []
 soundness = []
 clarity = []
 meaningful_comparison = []
-for d in ana_data:
+for d in a_data:
     score.append(int(d['score'][0]))
     confidence_score.append(int(d['confidence'][0]))
     summary.append(d['aspect'][0])
@@ -28,7 +29,7 @@ for d in ana_data:
     soundness.append(d['aspect'][5])
     clarity.append(d['aspect'][6])
     meaningful_comparison.append(d['aspect'][7])
-# 示例数据
+
 data = {
     'Score': score,
     'Summary': summary,
@@ -58,19 +59,22 @@ columns_to_plot = ['Summary', 'Motivation', 'Substance', 'Replicability',
 
 # 创建两行四列的子图布局
 fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-
+plt.rcParams.update({'font.size': 16})
 # 绘制每个方面的散点图
 for i, col in enumerate(columns_to_plot):
     row = i // 4  # 计算当前图的位置（行）
     col_idx = i % 4  # 计算当前图的位置（列）
     sns.regplot(x=col, y='Score', data=df, ax=axes[row, col_idx])
-    axes[row, col_idx].set_title(f'{col}')
+    axes[row, col_idx].set_title(col, fontsize=20)
+    axes[row, col_idx].set_xlabel(col, fontsize=18)
+    axes[row, col_idx].set_ylabel('Score', fontsize=18)
+    axes[row, col_idx].tick_params(axis='both', labelsize=16)
 
 # 调整布局
 plt.tight_layout()
 plt.suptitle('Scatter plots of Score vs Aspects Mentioned', y=1.02, fontsize=16)
-#plt.savefig('iclr_score.png')
-plt.show()
+plt.savefig('iclr_score_1.png')
+#plt.show()
 
 
 data = {
@@ -101,16 +105,19 @@ columns_to_plot = ['Summary', 'Motivation', 'Substance', 'Replicability',
 
 # 创建两行四列的子图布局
 fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-
+plt.rcParams.update({'font.size': 16})
 # 绘制每个方面的散点图
 for i, col in enumerate(columns_to_plot):
     row = i // 4  # 计算当前图的位置（行）
     col_idx = i % 4  # 计算当前图的位置（列）
     sns.regplot(x=col, y='Confidence_Score', data=df, ax=axes[row, col_idx])
-    axes[row, col_idx].set_title(f'{col}')
+    axes[row, col_idx].set_title(col, fontsize=20)
+    axes[row, col_idx].set_xlabel(col, fontsize=18)
+    axes[row, col_idx].set_ylabel('Confidence_Score', fontsize=18)
+    axes[row, col_idx].tick_params(axis='both', labelsize=16)
 
 # 调整布局
 plt.tight_layout()
 plt.suptitle('Scatter plots of Confidence Score vs Aspects Mentioned', y=1.02, fontsize=16)
-#plt.savefig('iclr_conf.png')
-plt.show()
+plt.savefig('iclr_conf_1.png')
+#plt.show()
