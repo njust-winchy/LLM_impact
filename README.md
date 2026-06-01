@@ -28,4 +28,4 @@ LLM_impact                                        Root directory
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
 
-Wenqing Wu, Chengzhi Zhang\*, Yi Zhao, Tong Bao. Impact of large language models on peer review opinions from a fine-grained perspective: Evidence from top conference proceedings in AI. ***Scientometrics***. 2026, 131(5): 3547–3584.  [[doi]](https://doi.org/10.1007/s11192-026-05645-7)  [[arXiv]](http://arxiv.org/abs/2604.19578)  [[Dataset & Source Code]](https://github.com/njust-winchy/LLM_impact)
+>Wenqing Wu, Chengzhi Zhang\*, Yi Zhao, Tong Bao. Impact of large language models on peer review opinions from a fine-grained perspective: Evidence from top conference proceedings in AI. ***Scientometrics***. 2026, 131(5): 3547–3584.  [[doi]](https://doi.org/10.1007/s11192-026-05645-7)  [[arXiv]](http://arxiv.org/abs/2604.19578)  [[Dataset & Source Code]](https://github.com/njust-winchy/LLM_impact)
